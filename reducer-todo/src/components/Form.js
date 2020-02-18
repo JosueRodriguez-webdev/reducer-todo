@@ -1,7 +1,4 @@
-import React, { useReducer, useState } from 'react'
-
-//reducers
-import { initialState, noteReducer } from '../reducers/index'
+import React from 'react'
 
 //import for material-ui
 import TextField from '@material-ui/core/TextField';

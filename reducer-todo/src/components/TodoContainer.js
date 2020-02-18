@@ -10,7 +10,6 @@ export default function TodoContainer() {
 
     const [newNote, setNewNote] = useState('')
     const [state, dispatch] = useReducer(noteReducer, initialState)
-    console.log(`console logging state in form.js`, state)
 
     //handle submit function
     const handleSubmit = (e) => {
@@ -23,7 +22,10 @@ export default function TodoContainer() {
         <div>
             <p>In the container</p>
             <Form newNote={newNote} setNewNote={setNewNote} sendReqToReducer={dispatch} handleSubmit={handleSubmit}/>
-            <DisplayTodoList/>
+
+            {state.map(notes => {
+                return <DisplayTodoList key={notes.id} notes={notes}/>
+            })}
         </div>
     )
 }

@@ -6,8 +6,11 @@ export const initialState = [{
 
 export const noteReducer = (state, action) => {
     switch (action.type) {
-
+        case "ADD_NOTE":
+            console.log(`working`)
+            return [...state, {note: action.payload, id: Date.now()}]
      default:
-        return state
+         console.log(`not working`)
+        return ({...state})
     }
 }

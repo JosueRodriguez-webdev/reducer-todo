@@ -10,7 +10,7 @@ import Button from '@material-ui/core/Button';
 export default function Form() {
     const [newNote, setNewNote] = useState('')
     const [state, dispatch] = useReducer(noteReducer, initialState)
-
+    console.log(`console logging state in form.js`, state)
     // handle change function
     const handleChanges = (e) => {
         setNewNote(e.target.value)
@@ -19,14 +19,9 @@ export default function Form() {
     //handle submit function
     const handleSubmit = (e) => {
         e.preventDefault();
-        dispatch({
-            note: newNote,
-            noteToggle: false,
-            id: Date.now()
-        })
+        dispatch({ type: 'ADD_NOTE', payload: newNote})
         setNewNote('')
     }
-
 
     return (
         <div>

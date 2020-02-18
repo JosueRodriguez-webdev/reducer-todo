@@ -1,7 +1,7 @@
 import React from 'react'
 
 import Form from './Form'
-import DisplayTodoList from './DisplayTodoList'
+import {DisplayTodoList} from './DisplayTodoList'
 
 export default function TodoContainer() {
     return (

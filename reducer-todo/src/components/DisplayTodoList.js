@@ -1,9 +1,10 @@
 import React from 'react'
 
-export default function DisplayTodoList() {
+export const DisplayTodoList = () => {
     return (
         <div>
             
         </div>
     )
 }
+

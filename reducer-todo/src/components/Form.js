@@ -8,24 +8,32 @@ import TextField from '@material-ui/core/TextField';
 import Button from '@material-ui/core/Button';
 
 export default function Form() {
-    const [userInput, setUserInput] = useState({
-        newNote: ''
-    })
-    const [newNote, setNewNote] = useReducer(noteReducer, initialState)
+    const [newNote, setNewNote] = useState('')
+    const [state, dispatch] = useReducer(noteReducer, initialState)
 
     // handle change function
     const handleChanges = (e) => {
-        setUserInput({newNote: e.target.value})
+        setNewNote(e.target.value)
     }
 
+    //handle submit function
+    const handleSubmit = (e) => {
+        e.preventDefault();
+        dispatch({
+            note: newNote,
+            noteToggle: false,
+            id: Date.now()
+        })
+        setNewNote('')
+    }
 
 
     return (
         <div>
-            <form>
-                <TextField onChange={handleChanges} value={userInput.newNote}id="outlined-basic" label="Insert Note Here..." variant="outlined" />
+            <form onSubmit={handleSubmit}>
+                <TextField onChange={handleChanges} value={newNote} id="outlined-basic" label="Insert Note Here..." variant="outlined" />
 
-                <Button variant="outlined" color="primary">
+                <Button type='submit' variant="outlined" color="primary">
                     Add Note
                 </Button>
             </form>

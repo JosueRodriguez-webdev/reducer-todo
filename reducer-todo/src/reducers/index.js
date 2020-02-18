@@ -1,12 +1,13 @@
-export const initialState = {
+export const initialState = [{
     note: '',
-    noteToggle: false
-}
+    noteToggle: false,
+    id: ''
+}]
 
 export const noteReducer = (state, action) => {
     switch (action.type) {
 
-    default:
+     default:
         return state
     }
 }

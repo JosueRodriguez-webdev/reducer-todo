@@ -1,9 +1,9 @@
 export const initialState = {
-    note: 'Learn about reducers',
+    note: '',
     noteToggle: false
 }
 
-export const reducer = (state, action) => {
+export const noteReducer = (state, action) => {
     switch (action.type) {
 
     default:

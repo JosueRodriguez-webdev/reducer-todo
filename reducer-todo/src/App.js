@@ -7,7 +7,7 @@ import TodoContainer from './components/TodoContainer'
 function App() {
   return (
     <div className="App">
-    <div>Hello World!</div>
+    <div>Notepad</div>
     <TodoContainer/>
     </div>
   );

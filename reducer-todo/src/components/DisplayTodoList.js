@@ -1,10 +1,10 @@
 import React from 'react'
 
-export const DisplayTodoList = ({ notes }) => {
-    const { note, id } = notes
+export const DisplayTodoList = (props) => {
+
     return (
         <div>
-            <p>{note}</p>
+            <p onClick={() => props.toggleNote(props.notes.id)}>{props.notes.note}</p>
             
         </div>
     )

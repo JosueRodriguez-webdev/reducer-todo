@@ -10,6 +10,7 @@ export default function Form(props) {
         props.setNewNote(e.target.value)
     }
 
+
     return (
         <div>
             <form onSubmit={props.handleSubmit}>
@@ -19,7 +20,7 @@ export default function Form(props) {
                     Add Note
                 </Button>
             </form>
-            <Button variant="outlined" color="secondary">
+            <Button onClick={props.deleteNote} variant="outlined" color="secondary">
                     Delete Note(s)
                 </Button>
             

@@ -27,18 +27,7 @@ export default function TodoContainer() {
     }
 
     const toggleNote = clickedId => {
-        // console.log(`in the function`)
-        const toggleItem = state.map((item) => {
-            if(item.id === clickedId) {
-                return [...state,{
-                    noteToggle: !item.noteToggle
-                }]
-            } else {
-                return item
-            }
-
-        })
-        dispatch({type: 'NOTE_TOGGLE', noteToggle: toggleItem})
+        dispatch({type: 'NOTE_TOGGLE', payload: clickedId})
     }
 
     return (
@@ -47,7 +36,7 @@ export default function TodoContainer() {
 
             <Form newNote={newNote} setNewNote={setNewNote} sendReqToReducer={dispatch} handleSubmit={handleSubmit} deleteNote={deleteNote}/>
 
-            {state.map(notes => {
+            {state.array.map(notes => {
                 return <DisplayTodoList key={notes.id} notes={notes} toggleNote={toggleNote}/>
             })}
         </div>
